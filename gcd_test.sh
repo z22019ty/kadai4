@@ -49,6 +49,10 @@ echo "Err:Not Integer" > ${ans}
 ./gcd.sh -1 20 > ${result}
 diff ${ans} ${result} || echo "error in 2-5" >> ${err}
 
+echo "step:2-6 異常動作テスト"
+echo "Err:Param" > ${ans}
+./gcd.sh 3 2 2 > ${result}
+diff ${ans} ${result} || echo "error in 2-6" >> ${err}
 
 if [ -f ${err} ]; then 
 	cat ${err}
